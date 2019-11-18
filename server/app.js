@@ -5,6 +5,7 @@
 const express = require("express");
 const app = express();
 
+
 app.use(express.json());
 
 app.use("/api/people", require("./api/people"));
@@ -19,6 +20,7 @@ app.use((err, req, res, next) => {
     res.status(500).send(err);
   }
 });
+
 
 // need to do this for supertest
 module.exports = { app };
